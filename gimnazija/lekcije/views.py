@@ -21,5 +21,6 @@ def cetvrti_razred(request):
     return render(request, 'lekcije/cetvrti_razred.html')
 
 
-def matematika_prvi(request):
-    return render(request, 'lekcije/matematika_prvi.html')
+def predmet(request, id):
+
+    return render(request, 'lekcije/predmet.html')

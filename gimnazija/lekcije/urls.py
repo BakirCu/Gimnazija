@@ -7,5 +7,6 @@ urlpatterns = [
     path('drugi_razred/', views.drugi_razred, name='drugi-razred'),
     path('trci_razred/', views.treci_razred, name='treci-razred'),
     path('cetvrti_razred/', views.cetvrti_razred, name='cetvrti-razred'),
-    path('matematika_prvi/', views.matematika_prvi, name='matematika-prvi'),
+    path('predmet/', views.predmet, name='predmet'),
+    path('predmet/<int:id>', views.predmet, name='predmet'),
 ]
