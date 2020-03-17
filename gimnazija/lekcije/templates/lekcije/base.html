@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lekcije</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'lekcije/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'lekcije/main.css' %}">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">
+            <img style="width:40px;" src="{% static 'lekcije/images/logo_2.jpg'%}" class="rounded" alt="Logo"
+                width="100">
+        </a>
+
+        <!-- Links -->
+        <ul class="nav nav-pills nav-justified">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <h3>I</h3>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <h3>II</h3>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <h3>III</h3>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <h3>IV</h3>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="footer">
+        <div class="jumbotron jumbotron-fluid big-banner ">
+            <div class="container text-center">
+                <span class="text-muted">
+                    <img style="width:40px;" src="{% static 'lekcije/images/logo.jpg'%}" class="rounded" alt="Logo"
+                        width="100">
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
