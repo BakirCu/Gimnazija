@@ -1,3 +1,4 @@
-.big-baner {
-  background-image: url('../../lekcije/images/logo.jpg');
+.image-text-container {
+    position: relative;
+    text-align: center;
 }
