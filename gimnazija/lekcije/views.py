@@ -24,6 +24,12 @@ def cetvrti_razred(request):
     return render(request, 'lekcije/cetvrti_razred.html')
 
 
+def lekcija(request, id):
+    lekcija = Lekcije.objects.get(id=int(id))
+    print(lekcija.id)
+    return render(request, 'lekcije/lekcija.html', {'lekcija': lekcija})
+
+
 def predmet(request, predmet, godina):
 
     lekcije = Lekcije.objects.all().filter(

@@ -1,0 +1,36 @@
+{% extends "lekcije/base.html" %}
+{% block content %}
+{% load static %}
+
+
+<div class="jumbotron jumbotron-fluid big-banner ">
+    <div class="container text-center">
+        {% if lekcija %}
+
+        <h1>{{lekcija.predmet}}</h1>
+        <h2>{{lekcije.godina}}</h2>
+    </div>
+</div>
+{% else %}
+<div class="container text-center">
+    <h1><em>Lekcija je uklonjena</em></h1>
+</div>
+{% endif%}
+
+<div class='container p-3 my-3 border text-center'>
+    <h2 class="mt-4">{{lekcija.naslov}}</h2>
+    <div class="row">
+        <div class="embed-responsive embed-responsive-4by3">
+            <iframe src="https://docs.google.com/viewer?url=http://ieee802.org/secmail/docIZSEwEqHFr.doc&embedded=true">
+            </iframe>
+        </div>
+    </div>
+    <p>
+        <div class="text-left">Datum:<b>{{lekcija.vreme_posta|date:"d.m.Y."}}</b></div>
+        <div class="text-right">Profesor:<b>{{lekcija.autor}}</b></div>
+    </p>
+</div>
+
+
+
+{% endblock %}
