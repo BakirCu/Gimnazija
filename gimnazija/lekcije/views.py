@@ -26,6 +26,7 @@ def cetvrti_razred(request):
 
 def predmet(request, predmet, godina):
 
-    lekcije = Lekcije.objects.all().filter(Q(predmet=predmet) & Q(godina=godina))
+    lekcije = Lekcije.objects.all().filter(
+        Q(predmet=predmet) & Q(godina=godina)).order_by('-vreme_posta')
 
     return render(request, 'lekcije/predmet.html', {'lekcije': lekcije})

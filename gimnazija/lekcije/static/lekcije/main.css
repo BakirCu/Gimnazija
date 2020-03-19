@@ -1,4 +1,4 @@
-.image-text-container {
-    position: relative;
-    text-align: center;
+.image-background {
+    background-image: url("../images/logo_2.jpg");
+    background-size: cover;
 }

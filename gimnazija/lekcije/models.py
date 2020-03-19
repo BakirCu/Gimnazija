@@ -7,7 +7,7 @@ class Lekcije(models.Model):
                 ("Fizika", "Fizika"),
                 ("Srpski jezik i književnost", "Srpski jezik i književnost"),
                 ("Srpski kao nematernji jezik", "Srpski kao nematernji"),
-                ("Bosanski jezik", "Bosanski jezik"),
+                ("Bosanski jezik i književnost", "Bosanski jezik i književnost"),
                 ("Engleski jezik", "Engleski jezik"),
                 ("Nemački jezik", "Nemački jezik"),
                 ("Francuski jezik", "Francuski jezik"),
@@ -48,4 +48,4 @@ class Lekcije(models.Model):
         return f'{self.naslov}'
 
     class Meta:
-        verbose_name_plural = "Napiši lekciju"
+        verbose_name_plural = "Započni lekciju"
