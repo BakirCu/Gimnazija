@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.validators import FileExtensionValidator
 
 
 class Lekcije(models.Model):
@@ -38,14 +39,16 @@ class Lekcije(models.Model):
               ("Treća godina", "Treća godina"),
               ("Četvrta godina", "Četvrta godina"), )
     naslov = models.CharField(max_length=300)
-    fajl = models.FileField(upload_to='lekcije')
+    fajl = models.FileField(upload_to='lekcije', validators=[
+                            FileExtensionValidator(['pdf', 'doc', 'docx'])])
     predmet = models.CharField(choices=PREDMETI, max_length=40)
     godina = models.CharField(choices=GODINE, max_length=40)
     autor = models.CharField(max_length=40)
     vreme_posta = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f'{self.naslov}'
+        return f'{self.autor} - {self.naslov}'
 
     class Meta:
+        ordering = ['autor']
         verbose_name_plural = "Započni lekciju"
