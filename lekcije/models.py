@@ -40,7 +40,7 @@ class Lekcije(models.Model):
               ("Četvrta godina", "Četvrta godina"), )
     naslov = models.CharField(max_length=300)
     fajl = models.FileField(upload_to='lekcije', validators=[
-                            FileExtensionValidator(['pdf', 'doc', 'docx'])])
+                            FileExtensionValidator(['pdf', 'doc', 'docx', 'ppt', 'pptx'])])
     predmet = models.CharField(choices=PREDMETI, max_length=40)
     godina = models.CharField(choices=GODINE, max_length=40)
     autor = models.CharField(max_length=40)
