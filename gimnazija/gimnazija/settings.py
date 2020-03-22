@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!)0shu0t@r4t_8@mq9=&&d^hu+ulqkw!yr+4c*67)@csbe3_jt'
+SECRET_KEY = os.getenv('GIMNAZIJA_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,10 +78,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'user': 'root',
-            'password': 'password',
-            'host': 'localhost',
-            'database': 'gimnazija',
+            'user': os.getenv('GIMNAZIJA_MYSQL_USER'),
+            'password': os.getenv('GIMNAZIJA_MYSQL_PASSWORD'),
+            'host': os.getenv('GIMNAZIJA_MYSQL_HOST'),
+            'database': os.getenv('GIMNAZIJA_MYSQL_DATABASE'),
         },
     }
 }
@@ -124,3 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+AZURE_ACCOUNT_NAME = os.getenv('GIMNAZIJA_ACCOUNT_NAME')
+AZURE_ACCOUNT_KEY = os.getenv('GIMNAZIJA_ACCOUNT_KEY')
+AZURE_CONTAINER = os.getenv('GIMNAZIJA_CONTAINER')
