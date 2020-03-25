@@ -3,60 +3,79 @@
 {% load static %}
 
 <div class="jumbotron jumbotron-fluid big-banner ">
-    <div class="container text-center">
-        <h1><i>Treći razred-predmeti</i></h1>
-    </div>
+        <div class="container text-center">
+                <h1><i>Treći razred-predmeti</i></h1>
+        </div>
 </div>
 <ul class="list-group list-group-flush text-center">
-    <li class=" list-group-item"><a
-            href="{% url 'predmet' predmet='Matematika' godina='Treća godina'  %}">Matematika</a>
-    </li>
-    <li class="list-group-item"><a href="{% url 'predmet' predmet='Fizika' godina='Treća godina' %}">Fizika</a></li>
-    <li class="list-group-item"><a href="{% url 'predmet' predmet='Hemija' godina='Treća godina' %}">Hemija</a></li>
-    <li class="list-group-item"><a href="{% url 'predmet' predmet='Biologija' godina='Treća godina' %}">Biologija</a>
-    </li>
-    <li class="list-group-item"><a href="{% url 'predmet' predmet='Istorija' godina='Treća godina' %}">Istorija</a></li>
-    <li class="list-group-item"><a href="{% url 'predmet' predmet='Geografija' godina='Treća godina' %}">Geografija</a>
-    </li>
-    <li class="list-group-item"><a href="{% url 'predmet' predmet='Filozofija' godina='Treća godina' %}">Filozofija</a>
-    </li>
-    <li class="list-group-item"><a
-            href="{% url 'predmet' predmet='Bosanski jezik i književnost' godina='Treća godina' %}">Bosanski jezik i
-            književnost</a></li>
-    <li class="list-group-item"><a
-            href="{% url 'predmet' predmet='Srpski jezik i književnost' godina='Treća godina' %}">Srpski jezik i
-            književnost</a></li>
-    <li class="list-group-item"><a
-            href="{% url 'predmet' predmet='Srpski kao nematernji jezik' godina='Treća godina' %}">Srpski kao
-            nematernji jezik</a></li>
-    <li class="list-group-item"><a href="{% url 'predmet' predmet='Engleski jezik' godina='Treća godina' %}">Engleski
-            jezik</a>
-    </li>
-    <li class="list-group-item"><a href="{% url 'predmet' predmet='Nemački jezik' godina='Treća godina' %}">Nemački
-            jezik</a>
-    </li>
+        <li class=" list-group-item"><a
+                        href="{% url 'predmet' predmet='Matematika' godina='Treća godina'  %}">Matematika</a>
+        </li>
+        <li class="list-group-item"><a href="{% url 'predmet' predmet='Fizika' godina='Treća godina' %}">Fizika</a></li>
+        <li class="list-group-item"><a href="{% url 'predmet' predmet='Hemija' godina='Treća godina' %}">Hemija</a></li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Biologija' godina='Treća godina' %}">Biologija</a>
+        </li>
+        <li class="list-group-item"><a href="{% url 'predmet' predmet='Istorija' godina='Treća godina' %}">Istorija</a>
+        </li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Geografija' godina='Treća godina' %}">Geografija</a>
+        </li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Filozofija' godina='Treća godina' %}">Filozofija</a>
+        </li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Bosanski jezik i književnost' godina='Treća godina' %}">Bosanski
+                        jezik i
+                        književnost</a></li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Srpski jezik i književnost' godina='Treća godina' %}">Srpski
+                        jezik i
+                        književnost</a></li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Srpski kao nematernji jezik' godina='Treća godina' %}">Srpski
+                        kao
+                        nematernji jezik</a></li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Engleski jezik' godina='Treća godina' %}">Engleski
+                        jezik</a>
+        </li>
+        <li class="list-group-item"><a href="{% url 'predmet' predmet='Nemački jezik' godina='Treća godina' %}">Nemački
+                        jezik</a>
+        </li>
 
-    <li class="list-group-item"><a href="{% url 'predmet' predmet='Francuski jezik' godina='Treća godina' %}">Francuski
-            jezik</a>
-    </li>
-
-    <li class="list-group-item"><a href="{% url 'predmet' predmet='Fizičko vaspitanje' godina='Treća godina' %}">Fizičko
-            vaspitanje</a>
-    </li>
-    <li class="list-group-item"><a
-            href="{% url 'predmet' predmet='Računarstvo i informatika' godina='Treća godina' %}">Računarstvo i
-            informatika</a></li>
-    <li class="list-group-item"><a
-            href="{% url 'predmet' predmet='Građansko vaspitanje' godina='Treća godina' %}">Građansko vaspitanje
-        </a>
-    </li>
-    <li class="list-group-item"><a
-            href="{% url 'predmet' predmet='Islamska veronauka' godina='Treća godina' %}">Islamska
-            veronauka</a>
-    </li>
-    <li class="list-group-item"><a
-            href="{% url 'predmet' predmet='Pravoslavna veronauka' godina='Treća godina' %}">Pravoslavna
-            veronauka</a>
-    </li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Francuski jezik' godina='Treća godina' %}">Francuski
+                        jezik</a>
+        </li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Likovna kultura' godina='Treća godina' %}">Likovna
+                        kultura</a>
+        </li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Muzička kultura' godina='Treća godina' %}">Muzička
+                        kultura</a>
+        </li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Fizičko vaspitanje' godina='Treća godina' %}">Fizičko
+                        vaspitanje</a>
+        </li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Računarstvo i informatika' godina='Treća godina' %}">Računarstvo
+                        i
+                        informatika</a></li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Građansko vaspitanje' godina='Treća godina' %}">Građansko
+                        vaspitanje
+                </a>
+        </li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Islamska veronauka' godina='Treća godina' %}">Islamska
+                        veronauka</a>
+        </li>
+        <li class="list-group-item"><a
+                        href="{% url 'predmet' predmet='Pravoslavna veronauka' godina='Treća godina' %}">Pravoslavna
+                        veronauka</a>
+        </li>
 </ul>
 {% endblock %}
