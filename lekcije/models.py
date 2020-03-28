@@ -51,4 +51,4 @@ class Lekcije(models.Model):
 
     class Meta:
         ordering = ['autor']
-        verbose_name_plural = "Započni lekciju"
+        verbose_name_plural = "Započni lekciju(ili dodaj sliku)"
