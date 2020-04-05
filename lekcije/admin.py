@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Lekcije
+from .models import Lekcije, Video
 
 
-admin.site.register([Lekcije, ])
+admin.site.register([Lekcije, Video])

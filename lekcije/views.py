@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Lekcije
+from .models import Lekcije, Video
 from django.db.models import Q
 
 
@@ -26,13 +26,20 @@ def cetvrti_razred(request):
 
 def lekcija(request, id):
     lekcija = Lekcije.objects.get(id=int(id))
-    print(lekcija.id)
-    return render(request, 'lekcije/lekcija.html', {'lekcija': lekcija})
+    return render(request, 'lekcije/lekcija.html', {'lekcija': lekcija, })
+
+
+def video(request, id):
+
+    video = Video.objects.get(id=int(id))
+    return render(request, 'lekcije/video.html', {'video': video, })
 
 
 def predmet(request, predmet, godina):
 
     lekcije = Lekcije.objects.all().filter(
-        Q(predmet=predmet) & Q(godina=godina)).order_by('-vreme_posta')
-
-    return render(request, 'lekcije/predmet.html', {'lekcije': lekcije})
+        Q(predmet=predmet) & Q(godina=godina))
+    video = Video.objects.all().filter(
+        Q(predmet=predmet) & Q(godina=godina))
+    lekcije_videi = lekcije.union(video).order_by('-vreme_posta')
+    return render(request, 'lekcije/predmet.html', {'lekcije': lekcije_videi, })

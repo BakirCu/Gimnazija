@@ -11,12 +11,7 @@
         <h2>{{lekcija.godina}}</h2>
     </div>
 </div>
-{% else %}
-<div class="container text-center">
-    <h1><em>Lekcija je uklonjena</em></h1>
-</div>
 {% endif%}
-
 <div class='container p-3 my-3 border text-center'>
     <h2 class="mt-4">{{lekcija.naslov}}</h2>
     {% if lekcija.fajl|extension == 'jpg' %}
@@ -34,6 +29,7 @@
         <div class="text-right">Profesor:<b>{{lekcija.autor}}</b></div>
     </p>
 </div>
+
 
 
 
