@@ -24,6 +24,13 @@ def cetvrti_razred(request):
     return render(request, 'lekcije/cetvrti_razred.html')
 
 
+def lekcije_godine(request, godina):
+    lekcije = Lekcije.objects.all().filter(godina=godina)
+    video = Video.objects.all().filter(godina=godina)
+    lekcije_videi = lekcije.union(video).order_by('-vreme_posta')
+    return render(request, "lekcije/lekcije_godine.html", {'lekcije': lekcije_videi, })
+
+
 def lekcija(request, id):
     lekcija = Lekcije.objects.get(id=int(id))
     return render(request, 'lekcije/lekcija.html', {'lekcija': lekcija, })
