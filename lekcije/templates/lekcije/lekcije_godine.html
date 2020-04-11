@@ -10,12 +10,14 @@
     </div>
 </div>
 
-<ul class="list-group list-group-flush text-center">
+<ul class="  list-group list-group-flush text-justify">
     {% for lekcija in lekcije %}
     {% if lekcija.fajl|startswith_https %}
-    <li class="list-group-item"><a href="{% url 'video' lekcija.id   %}">{{lekcija.naslov}}-{{lekcija.autor}}</a></li>
+    <li class="list-group-item"><a href="{% url 'video' lekcija.id   %}"> {{lekcija.vreme_posta|date:"d.m.Y."}} -
+            {{lekcija.predmet}} - {{lekcija.naslov}} - {{lekcija.autor}}</a></li>
     {% else %}
-    <li class="list-group-item"><a href="{% url 'lekcija' lekcija.id   %}">{{lekcija.naslov}}-{{lekcija.autor}}</a></li>
+    <li class="list-group-item"><a href="{% url 'lekcija' lekcija.id   %}"> {{lekcija.vreme_posta|date:"d.m.Y."}} -
+            {{lekcija.predmet}} - {{lekcija.naslov}} - {{lekcija.autor}}</a></li>
     {% endif %}
     {% endfor %}
 </ul>
