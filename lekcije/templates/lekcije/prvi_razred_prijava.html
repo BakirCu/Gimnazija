@@ -1,0 +1,45 @@
+{% extends "lekcije/base.html" %}
+{% block content %}
+{% load static %}
+<script>
+    function myFunction() {
+        var smer = document.getElementById("id_smer").value;
+
+        if (smer == 'IT-smer' || smer == 'Odeljenje za  učenike nadarene za sport') {
+            document.getElementById("id_prvi_izborni_program").required = false;
+            document.getElementById("id_drugi_izborni_program").required = false;
+        }
+        else {
+            document.getElementById("id_prvi_izborni_program").required = true;
+            document.getElementById("id_drugi_izborni_program").required = true;
+        }
+
+    }
+</script>
+<div class="jumbotron jumbotron-fluid  ">
+    <div class="container text-center ">
+        <h1><i>Gimnazija Novi Pazar-Upis ucenika u prvi razred</i></h1>
+    </div>
+</div>
+<div class="d-flex h-100">
+    <div class="m-auto">
+        <form class="form-group" method="post">
+            {% csrf_token %}
+            <div class="content-section">
+                <h3 class="mb-5">Za upis u prvi razred ispuniti sledeće podatke:</h3>
+                {{ form.as_p }}
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        <b>Važno:</b> Podacima rukuje odgovorno lice u
+                        skladu sa Zakonom o zaštiti podataka o ličnosti!
+                    </small>
+                </div>
+            </div>
+            <div class="col text-center">
+                <button type="submit" class="btn btn-success mt-5 mb-5">Završi prijavu</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

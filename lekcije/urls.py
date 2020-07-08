@@ -12,4 +12,6 @@ urlpatterns = [
     path('lekcije/<str:godina>/', views.lekcije_godine, name='lekcije_godine'),
     path('video/<str:id>/', views.video, name='video'),
     path('predmet/<str:predmet>/<str:godina>/', views.predmet, name='predmet'),
+    path('prvi-razred-prijava', views.prvi_razred_prijava,
+         name='prvi-razred-prijava'),
 ]

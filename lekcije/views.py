@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Lekcije, Video
 from django.db.models import Q
+from .forms import UcenikForm
+from django.contrib import messages
 
 
 def home(request):
@@ -50,3 +52,18 @@ def predmet(request, predmet, godina):
         Q(predmet=predmet) & Q(godina=godina))
     lekcije_videi = lekcije.union(video).order_by('-vreme_posta')
     return render(request, 'lekcije/predmet.html', {'lekcije': lekcije_videi, })
+
+
+def prvi_razred_prijava(request):
+    if request.method == 'POST':
+        form = UcenikForm(request.POST)
+        if form.is_valid():
+            ime = form.cleaned_data['ime']
+            prezime = form.cleaned_data['prezime']
+            messages.success(
+                request, f'Učenik "{ime} {prezime}" se uspešno prijavio! ')
+            form.save()
+            return redirect('lekcije-home')
+    else:
+        form = UcenikForm()
+    return render(request, 'lekcije/prvi_razred_prijava.html', {'form': form})
