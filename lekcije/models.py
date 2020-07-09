@@ -191,10 +191,6 @@ class Ucenik(models.Model):
 
     def clean(self):
 
-        if len(str(self.maticni_broj)) != 13:
-            raise ValidationError(
-                _('Uneli ste pogrešan matični broj'))
-
         if self.prvi_strani_jezik == self.drugi_strani_jezik:
             raise ValidationError(
                 _('Prvi i drugi strani jezik moraju biti različiti'))
