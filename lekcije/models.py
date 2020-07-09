@@ -2,7 +2,6 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import FileExtensionValidator
 from lekcije.video_id import embed_video
-
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
@@ -160,11 +159,9 @@ class Ucenik(models.Model):
     )
     ime = models.CharField(max_length=300)
     prezime = models.CharField(max_length=300)
-    maticni_broj = models.DecimalField(max_digits=13,
-                                       decimal_places=0,
-                                       unique=True,
-
-                                       )
+    maticni_broj = models.BigIntegerField(
+        unique=True,
+    )
     smer = models.CharField(choices=SMER, max_length=40)
     jezik_na_kojem_se_odvija_nastava = models.CharField(choices=JEZIK,
                                                         max_length=40
