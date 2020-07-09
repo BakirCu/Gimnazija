@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import FileExtensionValidator
 from lekcije.video_id import embed_video
-from django.core.validators import MinValueValidator
+
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
@@ -163,7 +163,7 @@ class Ucenik(models.Model):
     maticni_broj = models.DecimalField(max_digits=13,
                                        decimal_places=0,
                                        unique=True,
-                                       validators=[MinValueValidator(0)]
+
                                        )
     smer = models.CharField(choices=SMER, max_length=40)
     jezik_na_kojem_se_odvija_nastava = models.CharField(choices=JEZIK,
