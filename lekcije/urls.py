@@ -14,4 +14,5 @@ urlpatterns = [
     path('predmet/<str:predmet>/<str:godina>/', views.predmet, name='predmet'),
     path('prvi-razred-prijava', views.prvi_razred_prijava,
          name='prvi-razred-prijava'),
+    path('izbor-nastave', views.izbor_nastave, name='izbor-nastave'),
 ]

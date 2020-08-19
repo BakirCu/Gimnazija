@@ -1,0 +1,51 @@
+{% extends "lekcije/base.html" %}
+{% block content %}
+{% load static %}
+
+<div class="jumbotron jumbotron-fluid  ">
+    <div class="container text-center ">
+        <h1><i>Gimnazija Novi Pazar-Izjašnjavanje o nastavi u školi ili od kuće (od 1. do 4. razreda)</i></h1>
+    </div>
+</div>
+<div class="d-flex h-100">
+    <div class="m-auto">
+        <form class="form-group" method="post">
+            {% csrf_token %}
+            <div class="content-section">
+                <p class="mb-3"><b>Poštovani roditelji, </b></p>
+                <p class="mb-5"> Pred vama je <i>upitnik</i> u kome ćete se izjasniti o modelu nastave, koji predlaze
+                    Nastavničko veće "Novopazarske gimnazije"
+                    na osnovu preporuke Ministarstva prosvete, u školskoj 2020/21.godine.
+                    <br>
+                    <br>
+                    Veoma nam je važno da se precizno izjasnite kako bismo mogli što kvalitetnije da organizujemo
+                    obrazovno-vaspitni proces
+                    uz poštovanje svih propisanih mera nadležnih organa i Kriznog štaba. Za sve učenike od 1. do 4.
+                    razreda biće organizovan dolazak u 2 smene sa po 15 učenika maksmalno u učionicama, skraćenim
+                    časovima na po pola sata - po principu kombinovanog rada, jedna nedelja u školi - jedna od kuće
+                    online.
+                    Sve pisane i usmene provere znanja realizovaće se u školi u cilju praćenja napredovanja i
+                    ocenjivanja ućenika.
+                    <br>
+                    <br>
+                    U nadi da ćemo biti podrška jedni drugima i imati kvalitetnu saradnju, želimo vam što mirniji i
+                    uspešniji početak
+                    nove školske godine!
+                </p>
+                <div class="border-top pt-1 mb-5">
+                    <small class="text-muted">
+                        <b>Direktor:</b><br> Nermin Dražanin
+                    </small>
+                </div>
+                <h5 class="mb-3">Upitnik:</h5>
+                {{ form.as_p }}
+
+            </div>
+            <div class="col text-center">
+                <button type="submit" class="btn btn-success mt-5 mb-5">Završi upitnik</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

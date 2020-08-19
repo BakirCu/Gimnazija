@@ -190,7 +190,6 @@ class Ucenik(models.Model):
         return f'{self.ime}--{self.prezime}:{self.maticni_broj}-{self.jezik_na_kojem_se_odvija_nastava}-{self.prvi_strani_jezik}-{self.drugi_strani_jezik}-{self.prvi_izborni_program}-{self.drugi_izborni_program}'
 
     def clean(self):
-
         if self.prvi_strani_jezik == self.drugi_strani_jezik:
             raise ValidationError(
                 _('Prvi i drugi strani jezik moraju biti različiti'))
@@ -198,3 +197,70 @@ class Ucenik(models.Model):
             if self.prvi_izborni_program == self.drugi_izborni_program:
                 raise ValidationError(
                     _('Prvi i drugi izborni programi moraju biti različiti'))
+
+
+class IzborNastave(models.Model):
+    ODELJENJE = (
+        ("I-1", "I-1"),
+        ("I-2", "I-2"),
+        ("I-3", "I-3"),
+        ("I-4", "I-4"),
+        ("I-5", "I-5"),
+        ("I-6", "I-6"),
+        ("I-7", "I-7"),
+        ("I-8", "I-8"),
+        ("I-9", "I-9"),
+        ("I-10", "I-10"),
+        ("I-11", "I-11"),
+        ("I-12", "I-12"),
+        ("II-1", "II-1"),
+        ("II-2", "II-2"),
+        ("II-3", "II-3"),
+        ("II-4", "II-4"),
+        ("II-5", "II-5"),
+        ("II-6", "II-6"),
+        ("II-7", "II-7"),
+        ("II-8", "II-8"),
+        ("II-9", "II-9"),
+        ("II-10", "II-10"),
+        ("II-11", "II-11"),
+        ("III-1", "III-1"),
+        ("III-2", "III-2"),
+        ("III-3", "III-3"),
+        ("III-4", "III-4"),
+        ("III-5", "III-5"),
+        ("III-6", "III-6"),
+        ("III-7", "III-7"),
+        ("III-8", "III-8"),
+        ("III-9", "III-9"),
+        ("III-10", "III-10"),
+        ("III-11", "III-11"),
+        ("IV-1", "IV-1"),
+        ("IV-2", "IV-2"),
+        ("IV-3", "IV-3"),
+        ("IV-4", "IV-4"),
+        ("IV-5", "IV-5"),
+        ("IV-6", "IV-6"),
+        ("IV-7", "IV-7"),
+        ("IV-8", "IV-8"),
+        ("IV-9", "IV-9"),
+        ("IV-10", "IV-10"),
+    )
+
+    ime_prezime_ucenika = models.CharField(max_length=300)
+    odeljenje = models.CharField(choices=ODELJENJE,
+                                 max_length=30)
+    izbor = models.CharField(max_length=30)
+    ime_prezime_roditelja = models.CharField(max_length=300)
+
+    class Meta:
+        verbose_name_plural = 'Izbor nastave učenika'
+        unique_together = ('ime_prezime_ucenika', 'ime_prezime_roditelja',)
+
+    def __str__(self):
+        return f'{self.izbor}-{self.ime_prezime_ucenika}'
+
+    def clean(self):
+        if not self.izbor:
+            raise ValidationError(
+                _('Molim Vas odaberite "Da" ili "Ne" '))
