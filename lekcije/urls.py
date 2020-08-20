@@ -15,4 +15,5 @@ urlpatterns = [
     path('prvi-razred-prijava', views.prvi_razred_prijava,
          name='prvi-razred-prijava'),
     path('izbor-nastave', views.izbor_nastave, name='izbor-nastave'),
+    path('statistika', views.statistika, name='statistika'),
 ]

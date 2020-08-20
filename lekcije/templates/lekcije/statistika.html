@@ -1,0 +1,24 @@
+{% extends "lekcije/base.html" %}
+{% block content %}
+{% load static %}
+
+<div class="jumbotron jumbotron-fluid  ">
+    <div class="container text-center ">
+        <h1><i>Izjašnjavanje o nastavi u školi ili od kuće (statistika)</i></h1>
+    </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid  ">
+    <div class="container text-center ">
+        <h1>Broj glasova: <i> {{svi_odgovori}} </i></h1>
+        <h1>Pozitivni glasova: <i> {{pozitivni_odgovori}} </i></h1>
+        <h1>Negativni glasova: <i> {{negativni_odgovori}} </i></h1>
+    </div>
+</div>
+<div class="container p-3 my-3 border text-center bg-primary">
+
+    <h1>'Da' : {{ukupno_za_nastavu}} %</h1>
+    <h1>'Ne' : {{ukupno_protiv_nastave}} %</h1>
+
+</div>
+{% endblock %}

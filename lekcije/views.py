@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Lekcije, Video
+from .models import Lekcije, Video, IzborNastave
 from django.db.models import Q
 from .forms import UcenikForm, IzborNastaveForm
 from django.contrib import messages
@@ -81,3 +81,18 @@ def izbor_nastave(request):
     else:
         form = IzborNastaveForm()
     return render(request, 'lekcije/izbor_nastave.html', {'form': form})
+
+
+def statistika(request):
+    svi_odgovori = IzborNastave.objects.all().count()
+    pozitivni_odgovori = IzborNastave.objects.filter(izbor="Da").count()
+    negativni_odgovori = IzborNastave.objects.filter(izbor="Ne").count()
+    ukupno_za_nastavu = round(int(pozitivni_odgovori)/int(svi_odgovori)*100, 2)
+    ukupno_protiv_nastave = round(
+        int(negativni_odgovori)/int(svi_odgovori)*100, 2)
+    return render(request, 'lekcije/statistika.html', {'svi_odgovori': svi_odgovori,
+                                                       'pozitivni_odgovori': pozitivni_odgovori,
+                                                       'negativni_odgovori': negativni_odgovori,
+                                                       'ukupno_za_nastavu': ukupno_za_nastavu,
+                                                       'ukupno_protiv_nastave': ukupno_protiv_nastave
+                                                       })
