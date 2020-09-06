@@ -35,7 +35,7 @@ class Lekcije(models.Model):
                 ("Filozofija", "Filozofija"),
                 ("Sociologija", "Sociologija"),
                 ("Ustav i prava građana", "Ustav i prava građana"),
-                ("Obrazovanje za ordživi razvoj", "Obrazovanje za ordživi razvoj"),
+                ("Obrazovanje za održivi razvoj", "Obrazovanje za održivi razvoj"),
                 )
 
     GODINE = (("Prva godina", "Prva godina"),
@@ -87,7 +87,7 @@ class Video(models.Model):
                 ("Filozofija", "Filozofija"),
                 ("Sociologija", "Sociologija"),
                 ("Ustav i prava građana", "Ustav i prava građana"),
-                ("Obrazovanje za ordživi razvoj", "Obrazovanje za ordživi razvoj"),
+                ("Obrazovanje za održivi razvoj", "Obrazovanje za održivi razvoj"),
                 )
 
     GODINE = (("Prva godina", "Prva godina"),
