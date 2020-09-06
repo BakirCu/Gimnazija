@@ -35,6 +35,7 @@ class Lekcije(models.Model):
                 ("Filozofija", "Filozofija"),
                 ("Sociologija", "Sociologija"),
                 ("Ustav i prava građana", "Ustav i prava građana"),
+                ("Obrazovanje za ordživi razvoj", "Obrazovanje za ordživi razvoj"),
                 )
 
     GODINE = (("Prva godina", "Prva godina"),
@@ -86,6 +87,7 @@ class Video(models.Model):
                 ("Filozofija", "Filozofija"),
                 ("Sociologija", "Sociologija"),
                 ("Ustav i prava građana", "Ustav i prava građana"),
+                ("Obrazovanje za ordživi razvoj", "Obrazovanje za ordživi razvoj"),
                 )
 
     GODINE = (("Prva godina", "Prva godina"),
@@ -159,9 +161,7 @@ class Ucenik(models.Model):
     )
     ime = models.CharField(max_length=300)
     prezime = models.CharField(max_length=300)
-    maticni_broj = models.BigIntegerField(
-        unique=True,
-    )
+    maticni_broj = models.BigIntegerField()
     smer = models.CharField(choices=SMER, max_length=40)
     jezik_na_kojem_se_odvija_nastava = models.CharField(choices=JEZIK,
                                                         max_length=40
@@ -255,7 +255,6 @@ class IzborNastave(models.Model):
 
     class Meta:
         verbose_name_plural = 'Izbor nastave učenika'
-        unique_together = ('ime_prezime_ucenika', 'ime_prezime_roditelja',)
 
     def __str__(self):
         return f'{self.izbor}-{self.ime_prezime_ucenika}'
