@@ -7,4 +7,4 @@ msrest==0.6.10
 msrestazure==0.6.2
 mysql-connector-python==8.0.17
 mysqlclient==1.4.4
-Pillow==6.2.1
+Pillow==8.1.1
