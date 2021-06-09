@@ -1,7 +1,7 @@
 azure-common==1.1.23
 azure-storage-blob==2.1.0
 azure-storage-common==2.1.0
-Django==2.2.6
+Django==2.2.22
 django-storages==1.7.2
 msrest==0.6.10
 msrestazure==0.6.2
